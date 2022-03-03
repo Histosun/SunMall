@@ -1,9 +1,13 @@
 package com.zhaoyang.sunmall.member.entity;
 
+import lombok.Data;
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Objects;
 
+@Data
 @Entity
 @Table(name = "ums_member_login_log", schema = "sunmall-ums", catalog = "")
 public class MemberLoginLogEntity {
@@ -25,55 +29,8 @@ public class MemberLoginLogEntity {
     private String city;
     @Basic
     @Column(name = "login_type")
-    private Byte loginType;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public Long getMemberId() {
-        return memberId;
-    }
-
-    public void setMemberId(Long memberId) {
-        this.memberId = memberId;
-    }
-
-    public Timestamp getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Timestamp createTime) {
-        this.createTime = createTime;
-    }
-
-    public String getIp() {
-        return ip;
-    }
-
-    public void setIp(String ip) {
-        this.ip = ip;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public Byte getLoginType() {
-        return loginType;
-    }
-
-    public void setLoginType(Byte loginType) {
-        this.loginType = loginType;
-    }
+    @Type(type = "boolean")
+    private Boolean loginType;
 
     @Override
     public boolean equals(Object o) {

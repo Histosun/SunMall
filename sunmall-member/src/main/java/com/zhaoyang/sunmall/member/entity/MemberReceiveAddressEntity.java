@@ -1,8 +1,12 @@
 package com.zhaoyang.sunmall.member.entity;
 
+import lombok.Data;
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.util.Objects;
 
+@Data
 @Entity
 @Table(name = "ums_member_receive_address", schema = "sunmall-ums", catalog = "")
 public class MemberReceiveAddressEntity {
@@ -39,95 +43,8 @@ public class MemberReceiveAddressEntity {
     private String areacode;
     @Basic
     @Column(name = "default_status")
-    private Byte defaultStatus;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public Long getMemberId() {
-        return memberId;
-    }
-
-    public void setMemberId(Long memberId) {
-        this.memberId = memberId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getPostCode() {
-        return postCode;
-    }
-
-    public void setPostCode(String postCode) {
-        this.postCode = postCode;
-    }
-
-    public String getProvince() {
-        return province;
-    }
-
-    public void setProvince(String province) {
-        this.province = province;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getRegion() {
-        return region;
-    }
-
-    public void setRegion(String region) {
-        this.region = region;
-    }
-
-    public String getDetailAddress() {
-        return detailAddress;
-    }
-
-    public void setDetailAddress(String detailAddress) {
-        this.detailAddress = detailAddress;
-    }
-
-    public String getAreacode() {
-        return areacode;
-    }
-
-    public void setAreacode(String areacode) {
-        this.areacode = areacode;
-    }
-
-    public Byte getDefaultStatus() {
-        return defaultStatus;
-    }
-
-    public void setDefaultStatus(Byte defaultStatus) {
-        this.defaultStatus = defaultStatus;
-    }
+    @Type(type = "boolean")
+    private Boolean defaultStatus;
 
     @Override
     public boolean equals(Object o) {

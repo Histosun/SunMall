@@ -1,5 +1,7 @@
 package com.zhaoyang.sunmall.member.entity;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Timestamp;
@@ -17,6 +19,7 @@ public class MemberEntity {
     private Long levelId;
     @Basic
     @Column(name = "username")
+    @Type(type = "char")
     private String username;
     @Basic
     @Column(name = "password")
