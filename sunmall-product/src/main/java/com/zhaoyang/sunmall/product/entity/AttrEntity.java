@@ -1,6 +1,7 @@
 package com.zhaoyang.sunmall.product.entity;
 
 import lombok.Data;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -15,6 +16,7 @@ public class AttrEntity {
     private long attrId;
     @Basic
     @Column(name = "attr_name")
+    @Type(type = "char")
     private String attrName;
     @Basic
     @Column(name = "search_type")
@@ -24,6 +26,7 @@ public class AttrEntity {
     private String icon;
     @Basic
     @Column(name = "value_select")
+    @Type(type = "char")
     private String valueSelect;
     @Basic
     @Column(name = "attr_type")

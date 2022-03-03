@@ -8,20 +8,20 @@ import java.util.Objects;
 @Data
 @Entity
 @Table(name = "pms_spu_info_desc", schema = "sunmall-pms", catalog = "")
-public class PmsSpuInfoDescEntity {
+public class SpuInfoDescEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "spu_id")
     private long spuId;
     @Basic
-    @Column(name = "descript")
+    @Column(name = "descript", columnDefinition = "LONGTEXT")
     private String descript;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PmsSpuInfoDescEntity that = (PmsSpuInfoDescEntity) o;
+        SpuInfoDescEntity that = (SpuInfoDescEntity) o;
         return spuId == that.spuId && Objects.equals(descript, that.descript);
     }
 

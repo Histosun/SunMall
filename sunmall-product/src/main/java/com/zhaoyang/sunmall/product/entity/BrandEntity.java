@@ -1,6 +1,7 @@
 package com.zhaoyang.sunmall.product.entity;
 
 import lombok.Data;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -15,18 +16,20 @@ public class BrandEntity {
     private long brandId;
     @Basic
     @Column(name = "name")
+    @Type(type = "char")
     private String name;
     @Basic
     @Column(name = "logo")
     private String logo;
     @Basic
-    @Column(name = "descript")
+    @Column(name = "descript", columnDefinition = "LONGTEXT")
     private String descript;
     @Basic
     @Column(name = "show_status")
     private Byte showStatus;
     @Basic
     @Column(name = "first_letter")
+    @Type(type = "char")
     private String firstLetter;
     @Basic
     @Column(name = "sort")

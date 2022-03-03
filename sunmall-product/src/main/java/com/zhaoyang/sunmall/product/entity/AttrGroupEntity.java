@@ -1,6 +1,7 @@
 package com.zhaoyang.sunmall.product.entity;
 
 import lombok.Data;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -15,6 +16,7 @@ public class AttrGroupEntity {
     private long attrGroupId;
     @Basic
     @Column(name = "attr_group_name")
+    @Type(type = "char")
     private String attrGroupName;
     @Basic
     @Column(name = "sort")

@@ -1,6 +1,7 @@
 package com.zhaoyang.sunmall.product.entity;
 
 import lombok.Data;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -15,6 +16,7 @@ public class CategoryEntity {
     private long catId;
     @Basic
     @Column(name = "name")
+    @Type(type = "char")
     private String name;
     @Basic
     @Column(name = "parent_cid")
@@ -30,9 +32,11 @@ public class CategoryEntity {
     private Integer sort;
     @Basic
     @Column(name = "icon")
+    @Type(type = "char")
     private String icon;
     @Basic
     @Column(name = "product_unit")
+    @Type(type = "char")
     private String productUnit;
     @Basic
     @Column(name = "product_count")

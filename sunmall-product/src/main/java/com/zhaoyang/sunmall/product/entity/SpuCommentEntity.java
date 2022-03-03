@@ -1,6 +1,7 @@
 package com.zhaoyang.sunmall.product.entity;
 
 import lombok.Data;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -28,7 +29,8 @@ public class SpuCommentEntity {
     private String memberNickName;
     @Basic
     @Column(name = "star")
-    private Byte star;
+    @Type(type = "boolean")
+    private Boolean star;
     @Basic
     @Column(name = "member_ip")
     private String memberIp;
@@ -37,7 +39,8 @@ public class SpuCommentEntity {
     private Timestamp createTime;
     @Basic
     @Column(name = "show_status")
-    private Byte showStatus;
+    @Type(type = "boolean")
+    private Boolean showStatus;
     @Basic
     @Column(name = "spu_attributes")
     private String spuAttributes;
@@ -51,13 +54,13 @@ public class SpuCommentEntity {
     @Column(name = "resources")
     private String resources;
     @Basic
-    @Column(name = "content")
+    @Column(name = "content", columnDefinition = "TEXT")
     private String content;
     @Basic
     @Column(name = "member_icon")
     private String memberIcon;
     @Basic
-    @Column(name = "comment_type")
+    @Column(name = "comment_type", columnDefinition = "TINYINT", length = 4)
     private Byte commentType;
 
     @Override
