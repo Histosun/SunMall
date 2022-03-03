@@ -21,7 +21,7 @@ public class SeckillSessionEntity {
     @Column(name = "end_time")
     private Timestamp endTime;
     @Basic
-    @Column(name = "status")
+    @Column(name = "status", columnDefinition = "TINYINT", length = 2)
     private Byte status;
     @Basic
     @Column(name = "create_time")

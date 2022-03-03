@@ -1,9 +1,13 @@
 package com.zhaoyang.sunmall.coupon.entity;
 
+import lombok.Data;
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Objects;
 
+@Data
 @Entity
 @Table(name = "sms_sku_ladder", schema = "sunmall-sms", catalog = "")
 public class SkuLadderEntity {
@@ -25,55 +29,8 @@ public class SkuLadderEntity {
     private BigDecimal price;
     @Basic
     @Column(name = "add_other")
-    private Byte addOther;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public Long getSkuId() {
-        return skuId;
-    }
-
-    public void setSkuId(Long skuId) {
-        this.skuId = skuId;
-    }
-
-    public Integer getFullCount() {
-        return fullCount;
-    }
-
-    public void setFullCount(Integer fullCount) {
-        this.fullCount = fullCount;
-    }
-
-    public BigDecimal getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(BigDecimal discount) {
-        this.discount = discount;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
-    public Byte getAddOther() {
-        return addOther;
-    }
-
-    public void setAddOther(Byte addOther) {
-        this.addOther = addOther;
-    }
+    @Type(type = "boolean")
+    private Boolean addOther;
 
     @Override
     public boolean equals(Object o) {

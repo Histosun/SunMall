@@ -1,9 +1,13 @@
 package com.zhaoyang.sunmall.coupon.entity;
 
+import lombok.Data;
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Objects;
 
+@Data
 @Entity
 @Table(name = "sms_seckill_sku_notice", schema = "sunmall-sms", catalog = "")
 public class SeckillSkuNoticeEntity {
@@ -28,63 +32,8 @@ public class SeckillSkuNoticeEntity {
     private Timestamp sendTime;
     @Basic
     @Column(name = "notice_type")
-    private Byte noticeType;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public Long getMemberId() {
-        return memberId;
-    }
-
-    public void setMemberId(Long memberId) {
-        this.memberId = memberId;
-    }
-
-    public Long getSkuId() {
-        return skuId;
-    }
-
-    public void setSkuId(Long skuId) {
-        this.skuId = skuId;
-    }
-
-    public Long getSessionId() {
-        return sessionId;
-    }
-
-    public void setSessionId(Long sessionId) {
-        this.sessionId = sessionId;
-    }
-
-    public Timestamp getSubcribeTime() {
-        return subcribeTime;
-    }
-
-    public void setSubcribeTime(Timestamp subcribeTime) {
-        this.subcribeTime = subcribeTime;
-    }
-
-    public Timestamp getSendTime() {
-        return sendTime;
-    }
-
-    public void setSendTime(Timestamp sendTime) {
-        this.sendTime = sendTime;
-    }
-
-    public Byte getNoticeType() {
-        return noticeType;
-    }
-
-    public void setNoticeType(Byte noticeType) {
-        this.noticeType = noticeType;
-    }
+    @Type(type = "boolean")
+    private Boolean noticeType;
 
     @Override
     public boolean equals(Object o) {

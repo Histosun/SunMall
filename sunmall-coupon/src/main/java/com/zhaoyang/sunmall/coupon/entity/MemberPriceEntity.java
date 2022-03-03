@@ -1,9 +1,13 @@
 package com.zhaoyang.sunmall.coupon.entity;
 
+import lombok.Data;
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Objects;
 
+@Data
 @Entity
 @Table(name = "sms_member_price", schema = "sunmall-sms", catalog = "")
 public class MemberPriceEntity {
@@ -25,55 +29,8 @@ public class MemberPriceEntity {
     private BigDecimal memberPrice;
     @Basic
     @Column(name = "add_other")
-    private Byte addOther;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public Long getSkuId() {
-        return skuId;
-    }
-
-    public void setSkuId(Long skuId) {
-        this.skuId = skuId;
-    }
-
-    public Long getMemberLevelId() {
-        return memberLevelId;
-    }
-
-    public void setMemberLevelId(Long memberLevelId) {
-        this.memberLevelId = memberLevelId;
-    }
-
-    public String getMemberLevelName() {
-        return memberLevelName;
-    }
-
-    public void setMemberLevelName(String memberLevelName) {
-        this.memberLevelName = memberLevelName;
-    }
-
-    public BigDecimal getMemberPrice() {
-        return memberPrice;
-    }
-
-    public void setMemberPrice(BigDecimal memberPrice) {
-        this.memberPrice = memberPrice;
-    }
-
-    public Byte getAddOther() {
-        return addOther;
-    }
-
-    public void setAddOther(Byte addOther) {
-        this.addOther = addOther;
-    }
+    @Type(type = "boolean")
+    private Boolean addOther;
 
     @Override
     public boolean equals(Object o) {

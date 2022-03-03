@@ -1,8 +1,12 @@
 package com.zhaoyang.sunmall.coupon.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Objects;
 
+@Data
 @Entity
 @Table(name = "sms_seckill_sku_relation", schema = "sunmall-sms", catalog = "")
 public class SeckillSkuRelationEntity {
@@ -21,80 +25,16 @@ public class SeckillSkuRelationEntity {
     private Long skuId;
     @Basic
     @Column(name = "seckill_price")
-    private Integer seckillPrice;
+    private BigDecimal seckillPrice;
     @Basic
     @Column(name = "seckill_count")
-    private Integer seckillCount;
+    private BigDecimal seckillCount;
     @Basic
     @Column(name = "seckill_limit")
-    private Integer seckillLimit;
+    private BigDecimal seckillLimit;
     @Basic
     @Column(name = "seckill_sort")
     private Integer seckillSort;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public Long getPromotionId() {
-        return promotionId;
-    }
-
-    public void setPromotionId(Long promotionId) {
-        this.promotionId = promotionId;
-    }
-
-    public Long getPromotionSessionId() {
-        return promotionSessionId;
-    }
-
-    public void setPromotionSessionId(Long promotionSessionId) {
-        this.promotionSessionId = promotionSessionId;
-    }
-
-    public Long getSkuId() {
-        return skuId;
-    }
-
-    public void setSkuId(Long skuId) {
-        this.skuId = skuId;
-    }
-
-    public Integer getSeckillPrice() {
-        return seckillPrice;
-    }
-
-    public void setSeckillPrice(Integer seckillPrice) {
-        this.seckillPrice = seckillPrice;
-    }
-
-    public Integer getSeckillCount() {
-        return seckillCount;
-    }
-
-    public void setSeckillCount(Integer seckillCount) {
-        this.seckillCount = seckillCount;
-    }
-
-    public Integer getSeckillLimit() {
-        return seckillLimit;
-    }
-
-    public void setSeckillLimit(Integer seckillLimit) {
-        this.seckillLimit = seckillLimit;
-    }
-
-    public Integer getSeckillSort() {
-        return seckillSort;
-    }
-
-    public void setSeckillSort(Integer seckillSort) {
-        this.seckillSort = seckillSort;
-    }
 
     @Override
     public boolean equals(Object o) {

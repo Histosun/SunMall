@@ -1,10 +1,14 @@
 package com.zhaoyang.sunmall.coupon.entity;
 
+import lombok.Data;
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.Objects;
 
+@Data
 @Entity
 @Table(name = "sms_coupon", schema = "sunmall-sms", catalog = "")
 public class CouponEntity {
@@ -13,7 +17,7 @@ public class CouponEntity {
     @Column(name = "id")
     private long id;
     @Basic
-    @Column(name = "coupon_type")
+    @Column(name = "coupon_type", columnDefinition = "TINYINT", length = 2)
     private Byte couponType;
     @Basic
     @Column(name = "coupon_img")
@@ -40,7 +44,7 @@ public class CouponEntity {
     @Column(name = "end_time")
     private Timestamp endTime;
     @Basic
-    @Column(name = "use_type")
+    @Column(name = "use_type", columnDefinition = "TINYINT", length = 2)
     private Byte useType;
     @Basic
     @Column(name = "note")
@@ -64,171 +68,11 @@ public class CouponEntity {
     @Column(name = "code")
     private String code;
     @Basic
-    @Column(name = "member_level")
+    @Column(name = "member_level", columnDefinition = "TINYINT", length = 2)
     private Byte memberLevel;
     @Basic
     @Column(name = "publish")
-    private Byte publish;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public Byte getCouponType() {
-        return couponType;
-    }
-
-    public void setCouponType(Byte couponType) {
-        this.couponType = couponType;
-    }
-
-    public String getCouponImg() {
-        return couponImg;
-    }
-
-    public void setCouponImg(String couponImg) {
-        this.couponImg = couponImg;
-    }
-
-    public String getCouponName() {
-        return couponName;
-    }
-
-    public void setCouponName(String couponName) {
-        this.couponName = couponName;
-    }
-
-    public Integer getNum() {
-        return num;
-    }
-
-    public void setNum(Integer num) {
-        this.num = num;
-    }
-
-    public BigDecimal getAmount() {
-        return amount;
-    }
-
-    public void setAmount(BigDecimal amount) {
-        this.amount = amount;
-    }
-
-    public Integer getPerLimit() {
-        return perLimit;
-    }
-
-    public void setPerLimit(Integer perLimit) {
-        this.perLimit = perLimit;
-    }
-
-    public BigDecimal getMinPoint() {
-        return minPoint;
-    }
-
-    public void setMinPoint(BigDecimal minPoint) {
-        this.minPoint = minPoint;
-    }
-
-    public Timestamp getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(Timestamp startTime) {
-        this.startTime = startTime;
-    }
-
-    public Timestamp getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(Timestamp endTime) {
-        this.endTime = endTime;
-    }
-
-    public Byte getUseType() {
-        return useType;
-    }
-
-    public void setUseType(Byte useType) {
-        this.useType = useType;
-    }
-
-    public String getNote() {
-        return note;
-    }
-
-    public void setNote(String note) {
-        this.note = note;
-    }
-
-    public Integer getPublishCount() {
-        return publishCount;
-    }
-
-    public void setPublishCount(Integer publishCount) {
-        this.publishCount = publishCount;
-    }
-
-    public Integer getUseCount() {
-        return useCount;
-    }
-
-    public void setUseCount(Integer useCount) {
-        this.useCount = useCount;
-    }
-
-    public Integer getReceiveCount() {
-        return receiveCount;
-    }
-
-    public void setReceiveCount(Integer receiveCount) {
-        this.receiveCount = receiveCount;
-    }
-
-    public Timestamp getEnableStartTime() {
-        return enableStartTime;
-    }
-
-    public void setEnableStartTime(Timestamp enableStartTime) {
-        this.enableStartTime = enableStartTime;
-    }
-
-    public Timestamp getEnableEndTime() {
-        return enableEndTime;
-    }
-
-    public void setEnableEndTime(Timestamp enableEndTime) {
-        this.enableEndTime = enableEndTime;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public Byte getMemberLevel() {
-        return memberLevel;
-    }
-
-    public void setMemberLevel(Byte memberLevel) {
-        this.memberLevel = memberLevel;
-    }
-
-    public Byte getPublish() {
-        return publish;
-    }
-
-    public void setPublish(Byte publish) {
-        this.publish = publish;
-    }
+    private Boolean publish;
 
     @Override
     public boolean equals(Object o) {
