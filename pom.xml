@@ -16,6 +16,7 @@
         <module>sunmall-order</module>
         <module>sunmall-product</module>
         <module>sunmall-ware</module>
+        <module>sunmall-common</module>
     </modules>
 
 </project>
