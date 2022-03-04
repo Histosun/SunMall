@@ -1,20 +1,20 @@
-spring:
-  application:
-    name: sunmall-member
-  datasource:
-    username: root
-    password: root
-    url: jdbc:mysql://192.168.56.10:3306/sunmall-ums
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    type: com.alibaba.druid.pool.DruidDataSource
-  jpa:
-    hibernate:
-      ddl-auto: validate
-      naming:
-        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 127.0.0.1:8848
-server:
-  port: 8081
+#spring:
+#  application:
+#    name: sunmall-member
+#  datasource:
+#    username: root
+#    password: root
+#    url: jdbc:mysql://192.168.56.10:3306/sunmall-ums
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    type: com.alibaba.druid.pool.DruidDataSource
+#  jpa:
+#    hibernate:
+#      ddl-auto: validate
+#      naming:
+#        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 127.0.0.1:8848
+#server:
+#  port: 8081

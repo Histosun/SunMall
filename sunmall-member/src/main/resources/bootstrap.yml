@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: sunmall-member
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: cb4acdbf-af5b-442d-8869-6116b367416a
+        extension-configs:
+          - dataId: common.yaml
+            group: dev
+            refresh: true
+          - dataId: member.yaml
+            group: dev
+            refresh: true
+server:
+  port: 8081
