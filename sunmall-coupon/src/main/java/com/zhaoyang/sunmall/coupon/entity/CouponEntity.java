@@ -15,7 +15,7 @@ public class CouponEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id")
-    private long id;
+    private Long id;
     @Basic
     @Column(name = "coupon_type", columnDefinition = "TINYINT", length = 2)
     private Byte couponType;
