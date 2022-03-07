@@ -4,6 +4,7 @@ import lombok.Data;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Data
@@ -15,8 +16,7 @@ public class CategoryEntity {
     @Column(name = "cat_id")
     private long catId;
     @Basic
-    @Column(name = "name")
-    @Type(type = "char")
+    @Column(name = "name", columnDefinition = "char", length = 50)
     private String name;
     @Basic
     @Column(name = "parent_cid")
@@ -41,6 +41,9 @@ public class CategoryEntity {
     @Basic
     @Column(name = "product_count")
     private Integer productCount;
+
+    @Transient
+    private List<CategoryEntity> subCategory;
 
     @Override
     public boolean equals(Object o) {
