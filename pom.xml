@@ -17,7 +17,6 @@
         <module>sunmall-product</module>
         <module>sunmall-ware</module>
         <module>sunmall-common</module>
-        <module>renren-fast-master</module>
     </modules>
 
 </project>
