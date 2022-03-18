@@ -1,10 +1,10 @@
 package com.zhaoyang.sunmall.product.controller;
 
 import com.zhaoyang.sunmall.product.entity.CategoryEntity;
+import com.zhaoyang.sunmall.product.request.CategoryName;
 import com.zhaoyang.sunmall.product.service.CategoryService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -14,8 +14,28 @@ import java.util.List;
 public class CategoryController {
     private final CategoryService categoryService;
 
-    @RequestMapping("/list/tree")
+    @GetMapping("/list/tree")
     public List<CategoryEntity> list(){
         return categoryService.listWithTree();
+    }
+
+    @DeleteMapping
+    public void deleteCategories(@RequestBody List<Long> ids){
+        categoryService.deleteCategories(ids);
+    }
+
+    @PostMapping("/delete")
+    public void softDeleteCategories(@RequestBody List<Long> ids){
+        categoryService.softDelete(ids);
+    }
+
+    @PostMapping("/save")
+    public void save(@RequestBody CategoryEntity entity){
+        categoryService.save(entity);
+    }
+
+    @PostMapping("/edit")
+    public void edit(@RequestBody CategoryName nameRequest){
+        categoryService.edit(nameRequest);
     }
 }

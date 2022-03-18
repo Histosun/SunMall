@@ -1,7 +1,9 @@
 package com.zhaoyang.sunmall.product.entity;
 
 import lombok.Data;
+import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.Type;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.util.List;
@@ -9,6 +11,8 @@ import java.util.Objects;
 
 @Data
 @Entity
+@DynamicUpdate
+@Where(clause = "show_status = 1")
 @Table(name = "pms_category", schema = "sunmall-pms", catalog = "")
 public class CategoryEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
